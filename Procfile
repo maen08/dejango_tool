@@ -1,0 +1,1 @@
+web: gunicorn trial_project.wsgi:application
