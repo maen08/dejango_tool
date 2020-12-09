@@ -74,6 +74,9 @@ except FileExistsError:
     logger.debug('DONE: All packages are imported')
 
 
+
+
+
 time.sleep(3)
 
 logger.debug('Remember to push everything on Github')
@@ -94,6 +97,23 @@ time.sleep(2)
 # creating a heroku domain-name
 domain_name = input('Choose the domain name: ')
 os.system('heroku create' +' '+ domain_name)
+
+reading_file = open('settings.py', 'r')
+new_file_content = ""
+
+for line in reading_file:
+  stripped_line = line.strip()
+  new_line = stripped_line.replace(
+      'ALLOWED_HOSTS = []', 'ALLOWED_HOSTS = [' + domain_name + '.herokuapp.com')
+  new_file_content += new_line + "\n"
+
+
+reading_file.close()
+writing_file = open('settings.py', 'w')
+writing_file.write(new_file_content)
+
+writing_file.close()
+
 
 # push to heroku
 
