@@ -70,7 +70,7 @@ except FileExistsError:
 
 
 
+print('Remember to push on Github')
 
 
-
-# print('hello am running')
+# II: HEROKU PART-DEPLOYMENT

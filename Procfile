@@ -1,1 +1,1 @@
-web: gunicorn dejango_tool.wsgi:application
+web: gunicorn trial_project.wsgi:application
