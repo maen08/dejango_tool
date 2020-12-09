@@ -70,7 +70,23 @@ except FileExistsError:
 
 
 
-print('Remember to push on Github')
+print('Remember to push everything on Github')
 
 
 # II: HEROKU PART-DEPLOYMENT
+
+try:
+    print("INFO: Wait to login to heroku...")
+    # os.system('heroku login')
+    
+except:
+    print('INFO: Please login to heroku')
+
+# creating a heroku domain-name
+domain_name = input('Choose the domain name: ')
+os.system('heroku create' +' '+ domain_name)
+
+# push to heroku
+os.system('git push heroku master')
+os.system('heroku run python manage.py makemigrations')
+os.system('heroku run python manage.py migrate')
