@@ -104,7 +104,7 @@ new_file_content = ""
 for line in reading_file:
   stripped_line = line.strip()
   new_line = stripped_line.replace(
-      'ALLOWED_HOSTS = []', 'ALLOWED_HOSTS = [' + domain_name + '.herokuapp.com')
+      'ALLOWED_HOSTS = []', "ALLOWED_HOSTS = [" +'' +domain_name+ ".herokuapp.com"+"]"+'')
   new_file_content += new_line + "\n"
 
 
@@ -125,10 +125,11 @@ os.system('heroku git:remote -a' + ' ' + domain_name)
 os.system('heroku config:set DISABLE_COLLECTSTATIC=1')
 os.system('git push heroku master')
 
-logger.debug('DONE: Successful deployed!')
+logger.debug('Setting up database...')
 time.sleep(3)
 
 os.system('heroku run python manage.py makemigrations')
 os.system('heroku run python manage.py migrate')
 
-logger.debug('DONE: Database is all set!')
+time.sleep(2)
+logger.debug('DONE: SUCCESSFUL DEPLOYED!')
