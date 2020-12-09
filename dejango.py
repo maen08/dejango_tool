@@ -10,6 +10,8 @@ import logging
 # use the colored logging statements
 
 
+# I:THE DJANGO PART-SETTING UP EVERYTHING
+
 # ask the user to enter the project-name
 project_name = input('Whats your project name:')
 
@@ -36,7 +38,9 @@ except FileExistsError:
 try:
     with open('Procfile', 'x') as f:
         # make sure the project name is correct
-        f.write('web: gunicorn ' + project_name+'.wsgi:application')
+        f.write('web: gunicorn ' + project_name + '.wsgi:application')
+    print('DONE: Procfile created')
+
 
 except FileExistsError:
     print('DONE: Procfile created')
