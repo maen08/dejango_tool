@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 import os
+import sys
 
 # installing the packages required
 pip install psycopg2-binary gunicorn django-heroku dj-database-url
