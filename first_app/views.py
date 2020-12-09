@@ -4,6 +4,12 @@ from .forms import FullnameForm
 
 
 
+def test_view(request):
+    return render(request, template_name='index.html')
+
+
+
+
 def fullname_view(request):
     form = FullnameForm(request.POST or None)
     if form.is_valid():
