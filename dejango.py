@@ -101,10 +101,13 @@ os.system('heroku create' +' '+ domain_name)
 reading_file = open('settings.py', 'r')
 new_file_content = ""
 
+ALLOWED_HOSTS = domain_name + '.herokuapp.com'
+link = ALLOWED_HOSTS.split(' ')
+
 for line in reading_file:
   stripped_line = line.strip()
   new_line = stripped_line.replace(
-      'ALLOWED_HOSTS = []', "ALLOWED_HOSTS = [" +'' +domain_name+ ".herokuapp.com"+"]"+'')
+      'ALLOWED_HOSTS = []', f'ALLOWED_HOSTS = {link}')
   new_file_content += new_line + "\n"
 
 
