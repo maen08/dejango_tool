@@ -107,7 +107,8 @@ link = ALLOWED_HOSTS.split(' ')
 for line in reading_file:
   stripped_line = line.strip()
   new_line = stripped_line.replace(
-      'ALLOWED_HOSTS = []', f'ALLOWED_HOSTS = {link}')
+      'ALLOWED_HOSTS = []', f'ALLOWED_HOSTS = {link}')  # user should not rewrite ALLOWED_HOSTS
+                                                        # before the script. Let it handle everything
   new_file_content += new_line + "\n"
 
 
