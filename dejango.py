@@ -141,5 +141,4 @@ class DjangoHerokuDeploy():
     time.sleep(2)
     logger.debug('DONE: SUCCESSFUL DEPLOYED!')
 
-    time.sleep(2)
-    logger.debug('DONE: Open in browser', ALLOWED_HOSTS)
+
