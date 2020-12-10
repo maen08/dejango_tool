@@ -2,6 +2,8 @@ import django_heroku
 import dj_database_url
 import django_heroku
 import dj_database_url
+import django_heroku
+import dj_database_url
 
 import os
 from pathlib import Path
@@ -23,7 +25,7 @@ SECRET_KEY = '-gs9*)re4&mcq@2eoaiqc-&(w499@3c%8)q^_zo%v3s7+#61m4'
 DEBUG = True
 
 
-ALLOWED_HOSTS = ['dejang000.herokuapp.com']
+ALLOWED_HOSTS = []
 
 # Application definition
 
